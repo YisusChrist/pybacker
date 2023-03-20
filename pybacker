@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 
 """
-@file     python.py
-@date     DD/MM/YYYY
-@version  0.0.1
+@file     pybacker
+@date     20/03/2023
+@version  0.0.2
 @license  GNU General Public License v2.0
-@url      github.com/Julynx/RepositoryName
-@author   Julio Cabria (username@domain.ext)
+@url      https://github.com/YisusChrist/pybacker
+@author   Alejandro Gonzalez Momblan
 """
 
 import os
-import sys
 import subprocess
+import sys
 import time
+
 """
     # System
     #   Themes
@@ -64,29 +65,59 @@ import time
     "/home/omega/.local/share/icons/list-add_adjusted_clear.png",
 """
 files = [
-   
-
     "/home/omega/.local/my_scripts",
     "/home/omega/.local/share/bkm",
-
 ]
 
 
-def check_dir_list(dirs):
+def check_dir_list(dirs: list) -> bool:
+    """
+    Check if a list of directories exist
 
-    flag = True
+    Args:
+        dirs (list): List of directories to check
+
+    Returns:
+        bool: True if all directories exist, False otherwise
+
+    Notes:
+        This function is used to check if a list of directories exist
+        before copying files to the backup directory
+    """
 
     for dir in dirs:
         if not os.path.exists(dir):
-            flag = False
-            print("Directory '{}' does not exist".format(dir))
+            print(f"Directory '{dir}' does not exist")
+            return False
 
-    return flag
+    return True
 
 
 def run_cmd(cmd) -> str:
     """
     Run a command and return the output
+
+    Args:
+        cmd (str): Command to run
+
+    Returns:
+        str: Output of the command
+
+    Raises:
+        CalledProcessError: If the command returns a non-zero exit status
+
+    Notes:
+        This function is used to run commands in the terminal
+        and return the output of the command
+
+        This function is used to run commands that are not
+        available in the Python standard library or that require
+        the use of the shell
+
+        For example, the "cp" command is not available in the
+        Python standard library and requires the use of the shell
+        to copy directories and files, so it is necessary to use this
+        function to run the command
     """
     try:
         output = subprocess.check_output(cmd, shell=True)
@@ -95,7 +126,27 @@ def run_cmd(cmd) -> str:
     return output.decode("utf-8").strip()
 
 
-def create_empty(backup_dir):
+def create_empty(backup_dir: str) -> None:
+    """
+    Create empty containers for the files to be backed up
+
+    Args:
+        backup_dir (str): Directory where the backup will be stored
+
+    Notes:
+        This function is used to create empty directories and files
+        so that the files can be copied to the backup directory
+        without having to create the directories and files manually
+
+        This function is also useful for files that are created by the user
+        but are not created by the user
+
+        For example, if the user has a file in the directory
+        "/home/omega/.local/share/pswm/pswm.db"
+        and the directory "/home/omega/.local/share/pswm" does not exist
+        then the file cannot be copied to the backup directory
+        because the directory does not exist
+    """
     for file in files:
         try:
             file_path = "/".join(file.split("/")[:-1])
@@ -109,17 +160,16 @@ def create_empty(backup_dir):
 
 
 def main() -> int:
-
     try:
         backup_dir = str(sys.argv[1]) + f"/backup_{round(time.time())}"
     except IndexError:
         backup_dir = os.getcwd() + f"/backup_{round(time.time())}"
 
-    flag = check_dir_list(files)
-    if not flag:
+    print("Checking directories...")
+    if not check_dir_list(files):
         print("Some directories do not exist")
         print("Exiting...")
-        return 1
+        exit(1)
 
     print("All directories exist")
 
@@ -131,12 +181,12 @@ def main() -> int:
 
     print("Backing up files...")
     for file in files:
-
-        out = run_cmd(f"cp -r '{file}' '{backup_dir}{file}'")
+        cmd = f"cp -r '{file}' '{backup_dir}{file}'"
+        out = run_cmd(cmd)
 
         if out:
             print("--------------------------------")
-            print(f"cp -r '{file}' '{backup_dir}{file}'")
+            print(f"COMMAND: {cmd}")
             print(f"RETURNED: {out}")
             print("--------------------------------")
 
@@ -146,9 +196,9 @@ def main() -> int:
     if not check_dir_list(bak_files):
         print("Some directories could not be backed up")
         print("Exiting...")
-        return 1
+        exit(1)
 
-    return 0
+    exit(0)
 
 
 if __name__ == "__main__":
