@@ -1,0 +1,155 @@
+#!/usr/bin/env python3
+
+"""
+@file     python.py
+@date     DD/MM/YYYY
+@version  0.0.1
+@license  GNU General Public License v2.0
+@url      github.com/Julynx/RepositoryName
+@author   Julio Cabria (username@domain.ext)
+"""
+
+import os
+import sys
+import subprocess
+import time
+"""
+    # System
+    #   Themes
+    "/usr/share/themes/adw-gtk3",
+    "/usr/share/themes/adw-gtk3-dark",
+
+    # User
+    "/home/omega/Imágenes/Wallpapers",
+    "/home/omega/Imágenes/Screenshots",
+    "/home/omega/Plantillas",
+    "/home/omega/Documentos/Anotaciones",
+    "/home/omega/Scripts",
+
+    #   Config
+    "/home/omega/.config/wthr",
+    "/home/omega/.config/micro",
+    "/home/omega/.config/kitty",
+    "/home/omega/.config/i3",
+    "/home/omega/.config/gtk-2.0",
+    "/home/omega/.config/gtk-3.0",
+    "/home/omega/.config/gtk-4.0",
+    "/home/omega/.config/Code",
+    "/home/omega/.config/BraveSoftware",
+
+    #   Local
+    "/home/omega/.certs",
+    "/home/omega/.vscode",
+    "/home/omega/.bash_aliases",
+    "/home/omega/.bash_history",
+    "/home/omega/.bashrc",
+    "/home/omega/.profile",
+
+    #       State
+    "/home/omega/.local/state/bash",
+
+    #       Scripts
+    "/home/omega/.local/my_scripts",
+
+    #       Share
+    "/home/omega/.local/share/bkm",
+    "/home/omega/.local/share/pswm",
+
+    #           Icons
+    "/home/omega/.local/share/icons/minecraft",
+    "/home/omega/.local/share/icons/pyms",
+    "/home/omega/.local/share/icons/upgrade",
+    "/home/omega/.local/share/icons/performance",
+    "/home/omega/.local/share/icons/powersave",
+    "/home/omega/.local/share/icons/list-add_adjusted_clear.png",
+"""
+files = [
+   
+
+    "/home/omega/.local/my_scripts",
+    "/home/omega/.local/share/bkm",
+
+]
+
+
+def check_dir_list(dirs):
+
+    flag = True
+
+    for dir in dirs:
+        if not os.path.exists(dir):
+            flag = False
+            print("Directory '{}' does not exist".format(dir))
+
+    return flag
+
+
+def run_cmd(cmd) -> str:
+    """
+    Run a command and return the output
+    """
+    try:
+        output = subprocess.check_output(cmd, shell=True)
+    except subprocess.CalledProcessError:
+        output = ""
+    return output.decode("utf-8").strip()
+
+
+def create_empty(backup_dir):
+    for file in files:
+        try:
+            file_path = "/".join(file.split("/")[:-1])
+        except IndexError:
+            file_path = ""
+
+        file_path = backup_dir + file_path
+
+        # Make the directory if it doesn't exist
+        os.makedirs(file_path, exist_ok=True)
+
+
+def main() -> int:
+
+    try:
+        backup_dir = str(sys.argv[1]) + f"/backup_{round(time.time())}"
+    except IndexError:
+        backup_dir = os.getcwd() + f"/backup_{round(time.time())}"
+
+    flag = check_dir_list(files)
+    if not flag:
+        print("Some directories do not exist")
+        print("Exiting...")
+        return 1
+
+    print("All directories exist")
+
+    print("Creating backup directory...")
+    os.mkdir(backup_dir)
+
+    print("Creating empty containers...")
+    create_empty(backup_dir)
+
+    print("Backing up files...")
+    for file in files:
+
+        out = run_cmd(f"cp -r '{file}' '{backup_dir}{file}'")
+
+        if out:
+            print("--------------------------------")
+            print(f"cp -r '{file}' '{backup_dir}{file}'")
+            print(f"RETURNED: {out}")
+            print("--------------------------------")
+
+    print("Checking backup directory...")
+    bak_files = [str(backup_dir + file) for file in files]
+
+    if not check_dir_list(bak_files):
+        print("Some directories could not be backed up")
+        print("Exiting...")
+        return 1
+
+    return 0
+
+
+if __name__ == "__main__":
+    main()
