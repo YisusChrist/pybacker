@@ -34,9 +34,23 @@
     <a href="https://github.com/YisusChrist/pybacker/issues/new/choose">Request Feature</a>
     ·
     <a href="https://github.com/YisusChrist/pybacker/discussions">Ask Question</a>
+    ·
+    <a href="https://github.com/YisusChrist/pybacker/security/policy#reporting-a-vulnerability">Report security bug</a>
 </p>
 
 <br>
+
+<details>
+<summary>Table of Contents</summary>
+
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Execution](#execution)
+- [Contributors](#contributors)
+  - [How do I contribute to Pybacker?](#how-do-i-contribute-to-pybacker)
+- [Credits](#credits)
+
+</details>
 
 ## Requirements
 ...
@@ -49,11 +63,19 @@
 
 ## Contributors
 
-<a href="https://github.com/YisusChrist/pybacker/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=YisusChrist/pybacker" />
-</a>
+<a href="https://github.com/YisusChrist/pybacker/graphs/contributors"><img src="https://contrib.rocks/image?repo=YisusChrist/pybacker" /></a>
 
-<br><br>
+### How do I contribute to Pybacker?
+
+Before you participate in our delightful community, please read the [code of conduct](CODE_OF_CONDUCT.md).
+
+I'm far from being an expert and suspect there are many ways to improve – if you have ideas on how to make the configuration easier to maintain (and faster), don't hesitate to fork and send pull requests!
+
+We also need people to test out pull requests. So take a look through [the open issues](https://github.com/YisusChrist/pybacker/issues) and help where you can.
+
+See [Contributing](CONTRIBUTING.md) for more details.
+
+## Credits
 
 > **Note**
 Credits to [Julynx](https://github.com/Julynx) for creating the script. I only make improvements in his code based on my preferences to customize it.
