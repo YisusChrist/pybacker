@@ -4,11 +4,11 @@
     <a href="https://github.com/YisusChrist/pybacker/issues">
         <img src="https://img.shields.io/github/issues/YisusChrist/pybacker?color=171b20&label=Issues%20%20&logo=gnubash&labelColor=e05f65&logoColor=ffffff">&nbsp;&nbsp;&nbsp;
     </a>
-    <a href="https://github.com/YisusChrist/pybacker/issues">
+    <a href="https://github.com/YisusChrist/pybacker/forks">
         <img src="https://img.shields.io/github/forks/YisusChrist/pybacker?color=171b20&label=Forks%20%20&logo=git&labelColor=f1cf8a&logoColor=ffffff">&nbsp;&nbsp;&nbsp;
     </a>
-    <a href="https://github.com/YisusChrist/pybacker/issues">
-        <img src="https://img.shields.io/github/stars/YisusChrist/pybacker?color=171b20&label=Stargazers&logo=github&labelColor=70a5eb">&nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/YisusChrist/pybacker/">
+        <img src="https://img.shields.io/github/stars/YisusChrist/pybacker?color=171b20&label=Stargazers&logo=octicon-star&labelColor=70a5eb">&nbsp;&nbsp;&nbsp;
     </a>
     <a href="https://github.com/YisusChrist/pybacker/actions">
         <img alt="Tests Passing" src="https://github.com/anuraghazra/github-readme-stats/workflows/Test/badge.svg">&nbsp;&nbsp;&nbsp;
