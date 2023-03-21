@@ -11,11 +11,8 @@
         <img src="https://img.shields.io/github/stars/YisusChrist/pybacker?color=171b20&label=Stargazers&logo=octicon-star&labelColor=70a5eb">&nbsp;&nbsp;&nbsp;
     </a>
     <a href="https://github.com/YisusChrist/pybacker/actions">
-        <img alt="Tests Passing" src="https://github.com/anuraghazra/github-readme-stats/workflows/Test/badge.svg">&nbsp;&nbsp;&nbsp;
+        <img alt="Tests Passing" src="https://github.com/YisusChrist/pybacker/actions/workflows/github-code-scanning/codeql/badge.svg">&nbsp;&nbsp;&nbsp;
     </a>
-    <!--
-    For text "passing" or "not passing" use reference to <repo>/workflows/<workflow>.yml/badge.svg
-    -->
     <a href="https://github.com/YisusChrist/pybacker/pulls">
         <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/YisusChrist/pybacker?color=0088ff">&nbsp;&nbsp;&nbsp;
     </a>
