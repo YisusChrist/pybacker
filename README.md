@@ -1,3 +1,5 @@
+<p align="center"><img width="750" src="https://i.imgur.com/hcY0ccy.png" alt="Pybacker"></p>
+
 <p align="center">
     <a href="https://github.com/YisusChrist/pybacker/issues">
         <img src="https://img.shields.io/github/issues/YisusChrist/pybacker?color=171b20&label=Issues%20%20&logo=gnubash&labelColor=e05f65&logoColor=ffffff">&nbsp;&nbsp;&nbsp;
@@ -27,19 +29,34 @@
     -->
 </p>
 
+<br>
+
 <p align="center">
     <a href="https://github.com/YisusChrist/pybacker/issues/new/choose">Report Bug</a>
     ·
     <a href="https://github.com/YisusChrist/pybacker/issues/new/choose">Request Feature</a>
     ·
     <a href="https://github.com/YisusChrist/pybacker/discussions">Ask Question</a>
-  </p>
+</p>
 
-> **Note**
-Credits to [Julynx](https://github.com/Julynx) for creating the script. I only make improvements in his code based on my preferences to customize it.
+<br>
+
+## Requirements
+...
+
+## Installation
+...
+
+## Execution
+...
 
 ## Contributors
 
 <a href="https://github.com/YisusChrist/pybacker/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=YisusChrist/pybacker" />
 </a>
+
+<br><br>
+
+> **Note**
+Credits to [Julynx](https://github.com/Julynx) for creating the script. I only make improvements in his code based on my preferences to customize it.
