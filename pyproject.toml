@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pybacker"
+version = "1.0.0"
+description = ""
+license = "GPL-2.0-only"
+authors = ["Alejandro González Momblán <agelrenorenardo@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/yisuschrist/pybacker"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+rich = "^13.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,13 +1,4 @@
-#!/usr/bin/env python3
-"""
-@file     pybacker
-@date     2023-01-05
-@version  0.0.3
-@license  GNU General Public License v2.0
-@url      https://github.com/YisusChrist/pybacker
-@author   Alejandro Gonzalez Momblan
-"""
-
+"""Backup files and directories from a list of files"""
 import sys
 import time
 from pathlib import Path
