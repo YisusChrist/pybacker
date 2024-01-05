@@ -211,6 +211,24 @@ pygments = ">=2.13.0,<3.0.0"
 jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
+name = "rich-argparse-plus"
+version = "0.3.1.4"
+description = "A rich text formatter for argparse help with export and default features"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "rich_argparse_plus-0.3.1.4-py3-none-any.whl", hash = "sha256:74772572b852b7fefe28e44c5fe0e6491354b2594dae33ccec3860b349f96b21"},
+    {file = "rich_argparse_plus-0.3.1.4.tar.gz", hash = "sha256:aab9e49b4ba98ff501705678330eda8e9bc07d933edc5cac5f38671ee53f9998"},
+]
+
+[package.dependencies]
+rich = ">=11.0.0"
+
+[package.extras]
+dev = ["flit (>=3.7,<4.0)", "keyring (>=23.9,<24.0)", "pytest", "pytest-cov"]
+optional = ["cairosvg (>=2.5,<3.0)"]
+
+[[package]]
 name = "urllib3"
 version = "2.1.0"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -229,4 +247,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "e3d61743be1aabc86b0feef0695fb495fa62912c17b5911931caa24e14a601c7"
+content-hash = "387dd278da705ebc21e57baa9a9090292230ebeaeb932049e7b5b35031076fc9"

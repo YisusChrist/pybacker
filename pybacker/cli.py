@@ -1,8 +1,9 @@
 """Command-line interface for the project."""
-from argparse import ArgumentParser, Namespace, RawTextHelpFormatter
+from argparse import ArgumentParser, Namespace
 
 import requests
 from rich import print
+from rich_argparse_plus import RichHelpFormatterPlus
 
 from . import GITHUB
 from . import __desc__ as DESC
@@ -19,7 +20,7 @@ def get_parsed_args() -> Namespace:
     """
     parser = ArgumentParser(
         description=DESC,  # Program description
-        formatter_class=RawTextHelpFormatter,  # Disable line wrapping
+        formatter_class=RichHelpFormatterPlus,  # Disable line wrapping
         allow_abbrev=False,  # Disable abbreviations
         add_help=False,  # Disable default help
     )
@@ -32,7 +33,31 @@ def get_parsed_args() -> Namespace:
         dest="path",
         metavar="PATH",
         default=".",
-        help="The path to the directory to backup. Default is current directory.",
+        help="The path to the directory to backup.",
+    )
+    g_main.add_argument(
+        "-f",
+        "--files",
+        dest="files",
+        metavar="FILES",
+        default="",
+        help="The files to backup. Default is empty. [red]NOT IMPLEMENTED YET[/]",
+    )
+    g_main.add_argument(
+        "-e",
+        "--exclude",
+        dest="exclude",
+        metavar="EXCLUDE",
+        default="",
+        help="The files to exclude from the backup. Default is empty. [red]NOT IMPLEMENTED YET[/]",
+    )
+    g_main.add_argument(
+        "-o",
+        "--output",
+        dest="output",
+        metavar="OUTPUT",
+        default="",
+        help="The output directory for the backup. Default is backup_<timestamp>. [red]NOT IMPLEMENTED YET[/]",
     )
 
     g_misc = parser.add_argument_group("Miscellaneous Options")
@@ -40,24 +65,7 @@ def get_parsed_args() -> Namespace:
     g_misc.add_argument(
         "-h", "--help", action="help", help="Show this help message and exit."
     )
-    # Verbose
-    g_misc.add_argument(
-        "-v",
-        "--verbose",
-        dest="verbose",
-        action="store_true",
-        default=False,
-        help="Show log messages on screen. Default is False.",
-    )
-    # Debug
-    g_misc.add_argument(
-        "-d",
-        "--debug",
-        dest="debug",
-        action="store_true",
-        default=False,
-        help="Activate debug logs. Default is False.",
-    )
+    # Version
     g_misc.add_argument(
         "-V",
         "--version",
