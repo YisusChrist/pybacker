@@ -9,7 +9,7 @@ from rich import print
 from rich.traceback import install
 
 from .cli import check_updates, get_parsed_args
-from .consts import DEBUG, EXIT_SUCCESS, EXIT_FAILURE
+from .consts import DEBUG, EXIT_FAILURE, EXIT_SUCCESS
 
 
 def check_dir_list(dirs: list) -> bool:
