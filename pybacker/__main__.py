@@ -8,9 +8,8 @@ from tkinter import Tk, filedialog
 from rich import print
 from rich.traceback import install
 
-EXIT_SUCCESS = 0
-EXIT_FAILURE = 1
-DEBUG = False
+from .cli import check_updates, get_parsed_args
+from .consts import DEBUG, EXIT_SUCCESS, EXIT_FAILURE
 
 
 def check_dir_list(dirs: list) -> bool:
@@ -31,11 +30,12 @@ def check_dir_list(dirs: list) -> bool:
     return True
 
 
-def create_backup_dir() -> Path:
-    try:
-        backup_dir = Path(sys.argv[1]) / f"backup_{round(time.time())}"
-    except IndexError:
-        backup_dir = Path.cwd() / f"backup_{round(time.time())}"
+def create_backup_dir(base_path) -> Path:
+    if not Path(base_path).exists():
+        print(f"   [red]ERROR[/]: Base path '{base_path}' does not exist")
+        sys.exit(EXIT_FAILURE)
+
+    backup_dir = Path(base_path) / f"backup_{round(time.time())}"
 
     try:
         backup_dir.mkdir()
@@ -172,7 +172,13 @@ def cleanup_and_exit(exit_code: int, backup_dir: Path) -> None:
 
 
 def main():
-    backup_dir = create_backup_dir()
+    args = get_parsed_args()
+    
+    check_updates()
+
+    base_path = args.path if args.path else Path.cwd()
+
+    backup_dir = create_backup_dir(base_path)
     print(f"1. Creating backup directory '{backup_dir}'...")
 
     print("2. Getting list of files to be backed up...")
