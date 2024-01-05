@@ -2,8 +2,8 @@
 
 """
 @file     pybacker
-@date     20/03/2023
-@version  0.0.2
+@date     2023-01-05
+@version  0.0.3
 @license  GNU General Public License v2.0
 @url      https://github.com/YisusChrist/pybacker
 @author   Alejandro Gonzalez Momblan
@@ -13,61 +13,10 @@ import os
 import subprocess
 import sys
 import time
+from tkinter import Tk, filedialog
 
-"""
-    # System
-    #   Themes
-    "/usr/share/themes/adw-gtk3",
-    "/usr/share/themes/adw-gtk3-dark",
-
-    # User
-    "/home/omega/Imágenes/Wallpapers",
-    "/home/omega/Imágenes/Screenshots",
-    "/home/omega/Plantillas",
-    "/home/omega/Documentos/Anotaciones",
-    "/home/omega/Scripts",
-
-    #   Config
-    "/home/omega/.config/wthr",
-    "/home/omega/.config/micro",
-    "/home/omega/.config/kitty",
-    "/home/omega/.config/i3",
-    "/home/omega/.config/gtk-2.0",
-    "/home/omega/.config/gtk-3.0",
-    "/home/omega/.config/gtk-4.0",
-    "/home/omega/.config/Code",
-    "/home/omega/.config/BraveSoftware",
-
-    #   Local
-    "/home/omega/.certs",
-    "/home/omega/.vscode",
-    "/home/omega/.bash_aliases",
-    "/home/omega/.bash_history",
-    "/home/omega/.bashrc",
-    "/home/omega/.profile",
-
-    #       State
-    "/home/omega/.local/state/bash",
-
-    #       Scripts
-    "/home/omega/.local/my_scripts",
-
-    #       Share
-    "/home/omega/.local/share/bkm",
-    "/home/omega/.local/share/pswm",
-
-    #           Icons
-    "/home/omega/.local/share/icons/minecraft",
-    "/home/omega/.local/share/icons/pyms",
-    "/home/omega/.local/share/icons/upgrade",
-    "/home/omega/.local/share/icons/performance",
-    "/home/omega/.local/share/icons/powersave",
-    "/home/omega/.local/share/icons/list-add_adjusted_clear.png",
-"""
-files = [
-    "/home/omega/.local/my_scripts",
-    "/home/omega/.local/share/bkm",
-]
+EXIT_SUCCESS = 0
+EXIT_FAILURE = 1
 
 
 def check_dir_list(dirs: list) -> bool:
@@ -126,12 +75,13 @@ def run_cmd(cmd) -> str:
     return output.decode("utf-8").strip()
 
 
-def create_empty(backup_dir: str) -> None:
+def create_empty(backup_dir: str, files: list) -> None:
     """
     Create empty containers for the files to be backed up
 
     Args:
         backup_dir (str): Directory where the backup will be stored
+        files (list): List of files to create empty containers for
 
     Notes:
         This function is used to create empty directories and files
@@ -159,17 +109,50 @@ def create_empty(backup_dir: str) -> None:
         os.makedirs(file_path, exist_ok=True)
 
 
+def get_file_list() -> list:
+    """
+    Get the list of files to be backed up from a file
+
+    Returns:
+        list: List of files to be backed up
+    """
+    print("Select the file with the list to be backed up")
+    # Create a Tk root window
+    root = Tk()
+    # Hide the main window
+    root.withdraw()
+    # Ask the user to select a file
+    file_path = filedialog.askopenfilename()
+    if not file_path:
+        print("No file selected.")
+        sys.exit(EXIT_FAILURE)
+
+    file_name = file_path.split("/")[-1]
+    print(f"Reading file '{file_name}'...")
+
+    with open(file_path, "r") as f:
+        files = [
+            line.strip()
+            for line in f.readlines()
+            if not line.startswith("#") and line.strip()
+        ]
+
+    return files
+
+
 def main() -> int:
     try:
         backup_dir = str(sys.argv[1]) + f"/backup_{round(time.time())}"
     except IndexError:
         backup_dir = os.getcwd() + f"/backup_{round(time.time())}"
 
+    files = get_file_list()
+
     print("Checking directories...")
     if not check_dir_list(files):
         print("Some directories do not exist")
         print("Exiting...")
-        exit(1)
+        sys.exit(EXIT_FAILURE)
 
     print("All directories exist")
 
@@ -196,9 +179,9 @@ def main() -> int:
     if not check_dir_list(bak_files):
         print("Some directories could not be backed up")
         print("Exiting...")
-        exit(1)
+        sys.exit(EXIT_FAILURE)
 
-    exit(0)
+    sys.exit(EXIT_SUCCESS)
 
 
 if __name__ == "__main__":
