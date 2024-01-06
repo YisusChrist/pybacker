@@ -47,17 +47,21 @@
 - [Execution](#execution)
 - [Contributors](#contributors)
   - [How do I contribute to Pybacker?](#how-do-i-contribute-to-pybacker)
+- [License](#license)
 - [Credits](#credits)
 
 </details>
 
 ## Requirements
+
 ...
 
 ## Installation
+
 ...
 
 ## Execution
+
 ...
 
 ## Contributors
@@ -74,7 +78,11 @@ We also need people to test out pull requests. So take a look through [the open 
 
 See [Contributing](.github/CONTRIBUTING.md) for more details.
 
+## License
+
+`pybacker` is released under the [GPL-2.0 License](https://opensource.org/license/gpl-2-0).
+
 ## Credits
 
 > **Note**
-Credits to [Julynx](https://github.com/Julynx) for creating the script. I only make improvements in his code based on my preferences to customize it.
+> Credits to [Julynx](https://github.com/Julynx) for creating the script. I only make improvements in his code based on my preferences to customize it.
