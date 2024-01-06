@@ -44,6 +44,9 @@
 
 - [Requirements](#requirements)
 - [Installation](#installation)
+  - [From PyPI](#from-pypi)
+  - [Manual installation](#manual-installation)
+  - [Uninstall](#uninstall)
 - [Execution](#execution)
 - [Contributors](#contributors)
   - [How do I contribute to Pybacker?](#how-do-i-contribute-to-pybacker)
@@ -54,11 +57,68 @@
 
 ## Requirements
 
-...
+Here's a breakdown of the packages needed and their versions:
+
+- [poetry](https://pypi.org/project/poetry) - 1.7.1 (_only for manual installation_)
+- [requests](https://pypi.org/project/requests) - 2.31.0
+- [rich-argparse-plus](https://pypi.org/project/rich-argparse-plus) - 0.3.1.4
+- [rich](https://pypi.org/project/rich) - 13.7.0
+
+> [!NOTE]\
+> The software has been developed and tested using Python `3.12.1`. The minimum required version to run the software is Python 3.6. Although the software may work with previous versions, it is not guaranteed.
 
 ## Installation
 
-...
+### From PyPI
+
+`pybacker` can be installed easily as a PyPI package. Just run the following command:
+
+```bash
+pip3 install pybacker
+```
+
+> [!IMPORTANT]\
+> For best practices and to avoid potential conflicts with your global Python environment, it is strongly recommended to install this program within a virtual environment. Avoid using the --user option for global installations. We highly recommend using [pipx](https://pypi.org/project/pipx) for a safe and isolated installation experience. Therefore, the appropriate command to install `pybacker` would be:
+>
+> ```bash
+> pipx install pybacker
+> ```
+
+### Manual installation
+
+If you prefer to install the program manually, follow these steps:
+
+> [!NOTE]\
+> This will install the version from the latest commit, not the latest release.
+
+1. Download the latest version of [pybacker](https://github.com/YisusChrist/pybacker) from this repository:
+
+   ```bash
+   git clone https://github.com/YisusChrist/pybacker
+   cd pybacker
+   ```
+
+2. Install the package:
+
+   ```bash
+   poetry install
+   ```
+
+3. Run the program:
+
+   ```bash
+   poetry run pybacker
+   ```
+
+### Uninstall
+
+If you installed it from PyPI, you can use the following command:
+
+```bash
+pipx uninstall pybacker
+```
+
+The program can now be ran from a terminal with the `pybacker` command.
 
 ## Execution
 
