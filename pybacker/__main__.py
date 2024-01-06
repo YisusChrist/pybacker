@@ -30,12 +30,15 @@ def check_dir_list(dirs: list) -> bool:
     return True
 
 
-def create_backup_dir(base_path) -> Path:
-    if not Path(base_path).exists():
-        print(f"   [red]ERROR[/]: Base path '{base_path}' does not exist")
-        sys.exit(EXIT_FAILURE)
+def create_backup_dir(output: str, base_path: str) -> Path:
+    if output:
+        backup_dir = Path(output).resolve()
+    elif base_path:
+        if not Path(base_path).exists():
+            print(f"   [red]ERROR[/]: Base path '{base_path}' does not exist")
+            sys.exit(EXIT_FAILURE)
 
-    backup_dir = Path(base_path) / f"backup_{round(time.time())}"
+        backup_dir = Path(base_path).resolve() / f"backup_{round(time.time())}"
 
     try:
         backup_dir.mkdir()
@@ -48,6 +51,8 @@ def create_backup_dir(base_path) -> Path:
     except Exception as e:
         print(f"   [red]ERROR[/]: Can not create backup directory: {e}")
         sys.exit(EXIT_FAILURE)
+
+    print(f"   Backup directory '{backup_dir}' created successfully!")
 
     return backup_dir
 
@@ -173,13 +178,10 @@ def cleanup_and_exit(exit_code: int, backup_dir: Path) -> None:
 
 def main():
     args = get_parsed_args()
-    
     check_updates()
 
-    base_path = args.path if args.path else Path.cwd()
-
-    backup_dir = create_backup_dir(base_path)
-    print(f"1. Creating backup directory '{backup_dir}'...")
+    print(f"1. Creating backup directory...")
+    backup_dir = create_backup_dir(output=args.output, base_path=args.path)
 
     print("2. Getting list of files to be backed up...")
     files = get_file_list(backup_dir)

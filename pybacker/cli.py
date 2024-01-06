@@ -57,7 +57,7 @@ def get_parsed_args() -> Namespace:
         dest="output",
         metavar="OUTPUT",
         default="",
-        help="The output directory for the backup. Default is backup_<timestamp>. [red]NOT IMPLEMENTED YET[/]",
+        help="The output directory for the backup. Default is [i]backup_<timestamp>.[/]",
     )
 
     g_misc = parser.add_argument_group("Miscellaneous Options")
