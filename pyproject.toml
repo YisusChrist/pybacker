@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pybacker"
 version = "1.0.0"
-description = ""
+description = "A simple backup tool for your files and folders"
 license = "GPL-2.0-only"
 authors = ["Alejandro González Momblán <agelrenorenardo@gmail.com>"]
 readme = "README.md"
