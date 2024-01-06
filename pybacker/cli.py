@@ -1,5 +1,6 @@
 """Command-line interface for the project."""
 from argparse import ArgumentParser, Namespace
+from pathlib import Path
 
 import requests
 from rich import print
@@ -32,8 +33,8 @@ def get_parsed_args() -> Namespace:
         "--path",
         dest="path",
         metavar="PATH",
-        default=".",
-        help="The path to the directory to backup.",
+        default=Path.cwd(),
+        help="The path that will store the directory of the backup.",
     )
     g_main.add_argument(
         "-f",
