@@ -87,6 +87,8 @@ pip3 install pybacker
 > pipx install pybacker
 > ```
 
+The program can now be ran from a terminal with the `pybacker` command.
+
 ### Manual installation
 
 If you prefer to install the program manually, follow these steps:
@@ -120,8 +122,6 @@ If you installed it from PyPI, you can use the following command:
 ```bash
 pipx uninstall pybacker
 ```
-
-The program can now be ran from a terminal with the `pybacker` command.
 
 ## Usage
 
