@@ -154,5 +154,5 @@ See [Contributing](.github/CONTRIBUTING.md) for more details.
 
 ## Credits
 
-> **Note**
-> Credits to [Julynx](https://github.com/Julynx) for creating the script. I only make improvements in his code based on my preferences to customize it.
+> [!NOTE]\
+> Credits to [Julynx](https://github.com/Julynx) for creating the script. I only make improvements in his code based on my preferences to customize it. All the ideas and the base of the script are his.
