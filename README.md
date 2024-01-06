@@ -19,11 +19,6 @@
     <a href="https://opensource.org/license/gpl-2-0/">
         <img alt="License" src="https://img.shields.io/github/license/YisusChrist/pybacker?color=0088ff">
     </a>
-    <!--
-    <a href="https://github.com/YisusChrist/pybacker/issues/contributors">
-        <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/YisusChrist/pybacker" />
-    </a>
-    -->
 </p>
 
 <br>
@@ -37,6 +32,10 @@
     ·
     <a href="https://github.com/YisusChrist/pybacker/security/policy#reporting-a-vulnerability">Report security bug</a>
 </p>
+
+<br>
+
+![Alt](https://repobeats.axiom.co/api/embed/cd9239ab8f98edef7010a72b2a01492ea28060de.svg "Repobeats analytics image")
 
 <br>
 
@@ -67,13 +66,13 @@
 
 ### How do I contribute to Pybacker?
 
-Before you participate in our delightful community, please read the [code of conduct](CODE_OF_CONDUCT.md).
+Before you participate in our delightful community, please read the [code of conduct](.github/CODE_OF_CONDUCT.md).
 
 I'm far from being an expert and suspect there are many ways to improve – if you have ideas on how to make the configuration easier to maintain (and faster), don't hesitate to fork and send pull requests!
 
 We also need people to test out pull requests. So take a look through [the open issues](https://github.com/YisusChrist/pybacker/issues) and help where you can.
 
-See [Contributing](CONTRIBUTING.md) for more details.
+See [Contributing](.github/CONTRIBUTING.md) for more details.
 
 ## Credits
 
