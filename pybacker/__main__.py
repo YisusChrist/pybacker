@@ -124,15 +124,20 @@ def get_file_list(backup_dir: Path) -> list:
 
 
 def copy_files(backup_dir: Path, files: list) -> None:
-    for file in files:
+    count = 0
+    for i, file in enumerate(files):
         source_path = Path(file)
         dest_path = backup_dir.joinpath(Path(*Path(file).parts[1:]))
 
         try:
             copytree(source_path, dest_path, dirs_exist_ok=True)
+            print(f"   {i+1}) File '{source_path}' backed up")
+            count += 1
         except Exception as e:
             print(f"   Error backing up file '{source_path}': {e}")
             cleanup_and_exit(EXIT_FAILURE, backup_dir)
+
+    print(f"   {count}/{len(files)} files backed up")
 
 
 def check_backup_directory(backup_dir, files):
