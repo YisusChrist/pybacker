@@ -39,6 +39,8 @@
 
 <br>
 
+`pybacker` is a Python script that allows you to backup your GitHub repositories in a simple and fast way.
+
 <details>
 <summary>Table of Contents</summary>
 
@@ -47,7 +49,8 @@
   - [From PyPI](#from-pypi)
   - [Manual installation](#manual-installation)
   - [Uninstall](#uninstall)
-- [Execution](#execution)
+- [Usage](#usage)
+  - [Example of execution](#example-of-execution)
 - [Contributors](#contributors)
   - [How do I contribute to Pybacker?](#how-do-i-contribute-to-pybacker)
 - [License](#license)
@@ -120,9 +123,16 @@ pipx uninstall pybacker
 
 The program can now be ran from a terminal with the `pybacker` command.
 
-## Execution
+## Usage
 
-...
+> [!NOTE]\
+> For more information about the usage of the program, run `pybacker --help` or `pybacker -h`.
+
+![Usage](https://i.imgur.com/LwnSEhr.png)
+
+### Example of execution
+
+![Example](https://i.imgur.com/6Agw47v.png)
 
 ## Contributors
 
