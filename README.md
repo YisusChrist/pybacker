@@ -125,7 +125,7 @@ pipx uninstall pybacker
 
 ## Usage
 
-> [!NOTE]\
+> [!NOTE]
 > For more information about the usage of the program, run `pybacker --help` or `pybacker -h`.
 
 ![Usage](https://i.imgur.com/LwnSEhr.png)
