@@ -24,11 +24,11 @@
 <br>
 
 <p align="center">
-    <a href="https://github.com/YisusChrist/pybacker/issues/new/choose">Report Bug</a>
+    <a href="https://github.com/YisusChrist/pybacker/issues/new?assignees=YisusChrist&labels=bug&projects=&template=bug_report.yml">Report Bug</a>
     ·
-    <a href="https://github.com/YisusChrist/pybacker/issues/new/choose">Request Feature</a>
+    <a href="https://github.com/YisusChrist/pybacker/issues/new?assignees=YisusChrist&labels=feature&projects=&template=feature_request.yml">Request Feature</a>
     ·
-    <a href="https://github.com/YisusChrist/pybacker/discussions">Ask Question</a>
+    <a href="https://github.com/YisusChrist/pybacker/issues/new?assignees=YisusChrist&labels=question&projects=&template=question.yml">Ask Question</a>
     ·
     <a href="https://github.com/YisusChrist/pybacker/security/policy#reporting-a-vulnerability">Report security bug</a>
 </p>
