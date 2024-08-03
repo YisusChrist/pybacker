@@ -185,7 +185,7 @@ def main():
     args = get_parsed_args()
     check_updates()
 
-    print(f"1. Creating backup directory...")
+    print("1. Creating backup directory...")
     backup_dir = create_backup_dir(output=args.output, base_path=args.path)
 
     print("2. Getting list of files to be backed up...")
