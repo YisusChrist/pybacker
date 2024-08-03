@@ -1,4 +1,5 @@
 """Constants for the project."""
+
 from . import PACKAGE
 
 

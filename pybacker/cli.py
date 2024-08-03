@@ -1,4 +1,5 @@
 """Command-line interface for the project."""
+
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 

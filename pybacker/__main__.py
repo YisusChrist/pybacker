@@ -1,4 +1,5 @@
 """Backup files and directories from a list of files"""
+
 import sys
 import time
 from pathlib import Path

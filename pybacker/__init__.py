@@ -1,4 +1,5 @@
 """Init file for the package."""
+
 try:
     from importlib import metadata
 except ImportError:  # for Python < 3.8
