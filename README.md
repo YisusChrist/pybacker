@@ -7,7 +7,7 @@
     <a href="https://github.com/YisusChrist/pybacker/forks">
         <img src="https://img.shields.io/github/forks/YisusChrist/pybacker?color=171b20&label=Forks%20%20&logo=git&labelColor=f1cf8a&logoColor=ffffff">&nbsp;&nbsp;&nbsp;
     </a>
-    <a href="https://github.com/YisusChrist/pybacker/">
+    <a href="https://github.com/YisusChrist/pybacker/stargazers">
         <img src="https://img.shields.io/github/stars/YisusChrist/pybacker?color=171b20&label=Stargazers&logo=octicon-star&labelColor=70a5eb">&nbsp;&nbsp;&nbsp;
     </a>
     <a href="https://github.com/YisusChrist/pybacker/actions">
