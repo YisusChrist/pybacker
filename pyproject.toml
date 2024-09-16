@@ -5,13 +5,13 @@ description = "A simple backup tool for your files and folders"
 license = "GPL-2.0-only"
 authors = ["Alejandro González Momblán <agelrenorenardo@gmail.com>"]
 readme = "README.md"
-repository = "https://github.com/yisuschrist/pybacker"
+repository = "https://github.com/YisusChrist/pybacker"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-rich = "^13.7.0"
+core-helpers = {git = "https://github.com/YisusChrist/core_helpers"}
 requests = "^2.31.0"
-rich-argparse-plus = "^0.3.1.4"
+rich = "^13.7.0"
 
 [tool.poetry.group.dev.dependencies]
 types-requests = "^2.32.0.20240914"
