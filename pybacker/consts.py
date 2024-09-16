@@ -1,9 +1,14 @@
 """Constants for the project."""
 
-from . import PACKAGE
+try:
+    from importlib import metadata
+except ImportError:  # for Python < 3.8
+    import importlib_metadata as metadata  # type: ignore
 
-
-NAME = PACKAGE
+__version__ = metadata.version(__package__ or __name__)
+__desc__ = metadata.metadata(__package__ or __name__)["Summary"]
+PACKAGE = metadata.metadata(__package__ or __name__)["Name"]
+GITHUB = metadata.metadata(__package__ or __name__)["Home-page"]
 
 MAX_TIMEOUT = 5
 

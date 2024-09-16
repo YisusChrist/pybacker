@@ -63,7 +63,7 @@ def check_directories(backup_dir, files):
         print("   [red]ERROR[/]: Some directories do not exist")
         cleanup_and_exit(EXIT_FAILURE, backup_dir)
 
-    print("   All directories exist [green]OK[/]")
+    print("   All directories exist")
 
 
 def create_empty(backup_dir: Path, files: list) -> None:

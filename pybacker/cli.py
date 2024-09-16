@@ -7,10 +7,9 @@ import requests
 from rich import print
 from rich_argparse_plus import RichHelpFormatterPlus
 
-from . import GITHUB
-from . import __desc__ as DESC
-from . import __version__ as VERSION
-from .consts import MAX_TIMEOUT, NAME
+from .consts import GITHUB, MAX_TIMEOUT, PACKAGE
+from .consts import __desc__ as DESC
+from .consts import __version__ as VERSION
 
 
 def get_parsed_args() -> Namespace:
@@ -73,7 +72,7 @@ def get_parsed_args() -> Namespace:
         "--version",
         action="version",
         help="Show version number and exit.",
-        version=f"[argparse.prog]{NAME}[/] version [i]{VERSION}[/]",
+        version=f"[argparse.prog]{PACKAGE}[/] version [i]{VERSION}[/]",
     )
 
     return parser.parse_args()
