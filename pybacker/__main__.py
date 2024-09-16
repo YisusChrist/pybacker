@@ -6,11 +6,13 @@ from pathlib import Path
 from shutil import copytree, rmtree
 from tkinter import Tk, filedialog
 
+from core_helpers.updates import check_updates
 from rich import print
 from rich.traceback import install
 
-from .cli import check_updates, get_parsed_args
-from .consts import DEBUG, EXIT_FAILURE, EXIT_SUCCESS
+from .cli import get_parsed_args
+from .consts import DEBUG, EXIT_FAILURE, EXIT_SUCCESS, GITHUB
+from .consts import __version__ as VERSION
 
 
 def check_dir_list(dirs: list) -> bool:
@@ -184,7 +186,7 @@ def cleanup_and_exit(exit_code: int, backup_dir: Path) -> None:
 
 def main():
     args = get_parsed_args()
-    check_updates()
+    check_updates(GITHUB, VERSION)
 
     print("1. Creating backup directory...")
     backup_dir = create_backup_dir(output=args.output, base_path=args.path)
