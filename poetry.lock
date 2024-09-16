@@ -231,6 +231,20 @@ dev = ["flit (>=3.7,<4.0)", "keyring (>=23.9,<24.0)", "pytest", "pytest-cov"]
 optional = ["cairosvg (>=2.5,<3.0)"]
 
 [[package]]
+name = "types-requests"
+version = "2.32.0.20240914"
+description = "Typing stubs for requests"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-requests-2.32.0.20240914.tar.gz", hash = "sha256:2850e178db3919d9bf809e434eef65ba49d0e7e33ac92d588f4a5e295fffd405"},
+    {file = "types_requests-2.32.0.20240914-py3-none-any.whl", hash = "sha256:59c2f673eb55f32a99b2894faf6020e1a9f4a402ad0f192bfee0b64469054310"},
+]
+
+[package.dependencies]
+urllib3 = ">=2"
+
+[[package]]
 name = "urllib3"
 version = "2.2.3"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -250,4 +264,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "387dd278da705ebc21e57baa9a9090292230ebeaeb932049e7b5b35031076fc9"
+content-hash = "7dd742409cac2dd15ec9c7ecbcd0672d52cb9270c8ca724e62eb5232e543ae12"
