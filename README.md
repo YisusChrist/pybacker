@@ -62,10 +62,10 @@
 
 Here's a breakdown of the packages needed and their versions:
 
-- [poetry](https://pypi.org/project/poetry) - 1.7.1 (_only for manual installation_)
-- [requests](https://pypi.org/project/requests) - 2.31.0
-- [rich-argparse-plus](https://pypi.org/project/rich-argparse-plus) - 0.3.1.4
-- [rich](https://pypi.org/project/rich) - 13.7.0
+- [poetry](https://pypi.org/project/poetry) >= 1.7.1 (_only for manual installation_)
+- [core-helpers](https://github.com/YisusChrist/core_helpers)
+- [requests](https://pypi.org/project/requests) >= 2.31.0
+- [rich](https://pypi.org/project/rich) >= 13.7.0
 
 > [!NOTE]
 > The software has been developed and tested using Python `3.12.1`. The minimum required version to run the software is Python 3.6. Although the software may work with previous versions, it is not guaranteed.
@@ -125,7 +125,7 @@ pipx uninstall pybacker
 
 ## Usage
 
-> [!NOTE]
+> [!TIP]
 > For more information about the usage of the program, run `pybacker --help` or `pybacker -h`.
 
 ![Usage](https://i.imgur.com/LwnSEhr.png)
@@ -140,13 +140,13 @@ pipx uninstall pybacker
 
 ### How do I contribute to Pybacker?
 
-Before you participate in our delightful community, please read the [code of conduct](.github/CODE_OF_CONDUCT.md).
+Before you participate in our delightful community, please read the [code of conduct](https://github.com/YisusChrist/.github/blob/main/CODE_OF_CONDUCT.md).
 
 I'm far from being an expert and suspect there are many ways to improve – if you have ideas on how to make the configuration easier to maintain (and faster), don't hesitate to fork and send pull requests!
 
 We also need people to test out pull requests. So take a look through [the open issues](https://github.com/YisusChrist/pybacker/issues) and help where you can.
 
-See [Contributing](.github/CONTRIBUTING.md) for more details.
+See [Contributing](https://github.com/YisusChrist/.github/blob/main/CONTRIBUTING.md) for more details.
 
 ## License
 
