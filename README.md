@@ -16,7 +16,7 @@
     <a href="https://github.com/YisusChrist/pybacker/pulls">
         <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/YisusChrist/pybacker?color=0088ff">&nbsp;&nbsp;&nbsp;
     </a>
-    <a href="https://opensource.org/license/gpl-2-0/">
+    <a href="https://opensource.org/license/gpl-2.0">
         <img alt="License" src="https://img.shields.io/github/license/YisusChrist/pybacker?color=0088ff">
     </a>
 </p>
@@ -150,7 +150,7 @@ See [Contributing Guidelines](https://github.com/YisusChrist/.github/blob/main/C
 
 ## License
 
-`pybacker` is released under the [GPL-2.0 License](https://opensource.org/license/gpl-2-0).
+`pybacker` is released under the [GPL-2.0 License](https://opensource.org/license/GPL-2.0).
 
 ## Credits
 
